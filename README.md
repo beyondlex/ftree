@@ -14,7 +14,7 @@ A simple CLI tool based on [Cobra](https://cobra.dev/) for printing files as a t
 To install, clone the repository and build the application:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/beyondlex/ftree
 cd ftree
 go build
 ```
@@ -34,9 +34,8 @@ Example output:
   - LICENSE
   - README.md
   - cmd/
+    - printer.go
     - root.go
-    - walk_dir.go
-  - ftree
   - go.mod
   - go.sum
   - main.go
