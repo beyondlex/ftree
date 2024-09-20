@@ -23,6 +23,7 @@ func (p *MyPrinter) linesPrinted() int {
 type PrintDirParam struct {
 	maxDepth int
 	maxLines int
+	showAll  bool
 }
 
 func isHiddenFile(name string) bool {
@@ -49,7 +50,7 @@ func (p *MyPrinter) printDir(path string, depth int, param PrintDirParam) error 
 	}
 
 	for _, entry := range entries {
-		if isHiddenFile(entry.Name()) {
+		if isHiddenFile(entry.Name()) && !param.showAll {
 			continue
 		}
 

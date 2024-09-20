@@ -14,6 +14,7 @@ import (
 
 var Lines int
 var Depth int
+var All bool
 
 const defaultLines = 50
 const defaultDepth = 8
@@ -55,7 +56,7 @@ var rootCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		printer := MyPrinter{}
-		param := PrintDirParam{maxLines: Lines, maxDepth: Depth}
+		param := PrintDirParam{maxLines: Lines, maxDepth: Depth, showAll: All}
 		// defaults to current dir
 		path := "."
 		if len(args) > 0 {
@@ -75,4 +76,5 @@ func Execute() {
 func init() {
 	rootCmd.PersistentFlags().IntVarP(&Lines, "lines", "l", defaultLines, "Limit lines for printing")
 	rootCmd.PersistentFlags().IntVarP(&Depth, "depth", "d", defaultDepth, "Limit depth for printing")
+	rootCmd.PersistentFlags().BoolVarP(&All, "all", "a", false, "Show all files (including hidden files)")
 }
