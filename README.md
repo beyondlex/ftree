@@ -79,6 +79,7 @@ Usage:
   ftree [filepath] [flags]
 
 Flags:
+  -a, --all         Show all files (including hidden files)
   -d, --depth int   Limit depth for printing (default 8)
   -h, --help        help for ftree
   -l, --lines int   Limit lines for printing (default 50)
